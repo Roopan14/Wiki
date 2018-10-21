@@ -576,13 +576,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Log.d(TAG, "saveRecents: "+recentItemMap.keySet().size());
         //save in SP
         //recentItemMap.remove(dataItem.getTitle());
+        String current_key = dataItem.getTitle();
         recentItemMap.put(dataItem.getTitle(), dataItem);
         LinkedHashMap<String, DataItem> reversedMap = new LinkedHashMap<>();
         List<String> keyset = new ArrayList<>(recentItemMap.keySet());
-        Collections.reverse(keyset);
+        //Collections.reverse(keyset);
+        reversedMap.put(dataItem.getTitle(), dataItem);
         for (String key : keyset)
         {
-            reversedMap.put(key, recentItemMap.get(key));
+            if (!key.equals(current_key))
+            {
+                reversedMap.put(key, recentItemMap.get(key));
+            }
         }
         applySharedPreferences(reversedMap);
         recentItemMap = reversedMap;
