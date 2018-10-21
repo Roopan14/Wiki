@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="64dp"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    >
+
+    <ImageView
+        android:id="@+id/imageitem"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/imageviewbg"
+        android:scaleType="centerCrop"
+        />
+
+    <LinearLayout
+        android:id="@+id/linearitem"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:weightSum="2"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:paddingTop="4dp"
+            android:id="@+id/nameitem"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="@string/sachin_tendulkar"
+            android:textColor="@color/colorText"
+            />
+
+        <TextView
+            android:id="@+id/designationitem"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="@string/indian_cricketer"
+            android:textColor="@color/colorHintText"
+            android:paddingBottom="4dp"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

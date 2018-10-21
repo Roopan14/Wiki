@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/colorDullWhite"
+    >
+
+    <RelativeLayout
+        android:id="@+id/relative"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        >
+
+        <LinearLayout
+            android:id="@+id/searchlayout"
+            android:layout_margin="16dp"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:weightSum="8"
+            android:orientation="horizontal"
+            android:background="@drawable/edittextbg"
+            android:padding="8dp"
+            >
+
+            <ImageView
+                android:layout_weight="1"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/search"
+                android:backgroundTint="@color/colorText"
+                android:contentDescription="@string/search_icon" />
+
+            <TextView
+                android:id="@+id/searchtv"
+                android:gravity="center_vertical"
+                android:layout_weight="6"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="@string/search_hint"
+                android:textColor="@color/colorHintText"
+                />
+
+            <ImageView
+                android:id="@+id/voicesearch"
+                android:layout_weight="1"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/voicesearch"
+                android:backgroundTint="@color/colorText"
+                android:contentDescription="@string/voice_icon" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_below="@id/relative"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/listtoolbar"
+            android:background="@color/colorWhite"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:elevation="4dp"
+            >
+
+            <ImageView
+                android:id="@+id/backlist"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/more"
+                android:rotation="180"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="24dp"
+                android:text="@string/recents"
+                android:gravity="center_vertical"
+                android:textSize="24sp"
+                android:textColor="@color/colorHintText"
+                />
+
+        </LinearLayout>
+
+        <android.support.v7.widget.CardView
+            android:layout_below="@id/listtoolbar"
+            android:visibility="gone"
+            android:id="@+id/recentscard"
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="4dp"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+                <LinearLayout
+                    android:id="@+id/recentshead"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:weightSum="10"
+                    >
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/recents"
+                        android:tint="@color/colorText"
+                        />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="8"
+                        android:layout_height="wrap_content"
+                        android:text="@string/recents"
+                        android:textColor="@color/colorText"
+                        android:textStyle="bold"
+                        />
+                    <ImageView
+                        android:id="@+id/deleteall"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/deleteic"
+                        android:tint="@color/colorText"
+                        />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="1dp"
+                    android:layout_height="1dp"
+                    android:background="?android:attr/listDivider" />
+
+                <ListView
+                    android:id="@+id/listviewrc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+                </ListView>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="1dp"
+                    android:layout_height="1dp"
+                    android:background="?android:attr/listDivider" />
+
+                <LinearLayout
+                    android:visibility="gone"
+                    android:id="@+id/morerecents"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:weightSum="10"
+                    >
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/more"
+                        />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="8"
+                        android:layout_height="wrap_content"
+                        android:text="More Like This"
+                        android:textColor="@color/colorHintText"
+                        android:textAllCaps="true"
+                        android:textStyle="bold"
+                        />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <LinearLayout
+            android:id="@+id/welcomelyt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerInParent="true"
+            >
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:background="@drawable/welcome"
+                android:backgroundTint="@color/colorDullWhite"
+                android:backgroundTintMode="multiply"
+                />
+
+            <TextView
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/search_to_know"
+                android:textColor="@color/colorText"
+                android:textStyle="bold"
+                />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <include android:id="@+id/searchbarview" layout="@layout/search" android:visibility="gone"/>
+
+</RelativeLayout>
